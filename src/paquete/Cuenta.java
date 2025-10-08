@@ -45,11 +45,11 @@ public class Cuenta {
 
 
 	public void ingresar(Double i) {
-				
+		this.saldo = 500.0;		
 	}
 
 	public void retirar(Double i) {
-		
+		this.saldo = -500.0;
 	}
 
 
