@@ -1,16 +1,21 @@
 package paquete;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Cuenta {
 	
 	private String numero;
 	private String titular;
 	private Double saldo;
+	private List <Movimiento> mMovimientos;
 	
 	
 	public Cuenta(String numero, String titular, Double saldo) {
 		this.numero = numero;
 		this.titular = titular;
 		this.saldo = saldo;
+		this.mMovimientos = new ArrayList<Movimiento>();
 	}
 
 
@@ -49,8 +54,10 @@ public class Cuenta {
 	}
 
 	public void retirar(Double i) {
-		this.saldo -= i;
+		if(this.saldo - i >= -500)
+			this.saldo -= i;
+		else
+			System.out.println("Fondos insuficientes (saldo " + this.saldo + "€ en la cuenta " + this.numero + " para el reintegro de " + i + "€");
 	}
-
 
 }
